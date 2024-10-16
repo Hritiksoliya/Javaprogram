@@ -1,44 +1,32 @@
-
-class college{
-	
-void displaycollege(){
-	System.out.println("school class");
-	}
+// Grandparent class
+class Animal {
+    public void eat() {
+        System.out.println("This animal eats food.");
+    }
+}
+// Parent class (inherits from Animal)
+class Mammal extends Animal {
+    public void walk() {
+        System.out.println("This mammal walks.");
+    }
+}
+// Child class (inherits from Mammal)
+class Dog extends Mammal {
+    public void bark() {
+        System.out.println("The dog barks.");
+        System.out.println("Hritik Patidar : 2403856");
+    }
 }
 
-class student extends college{
-	//single level inheritance
-	// extend class student 
-	void displaystudent(){
-		System.out.println();
-		System.out.println("student class with single level inheritance");
-		System.out.println("calling college class function");
-		displaycollege();
+// Main class to test multilevel inheritance
+public class Main {
+    public static void main(String[] args) {
+        // Creating an object of the Dog class
+        Dog myDog = new Dog();
 
-	}
-}
-
-class CSstudnt extends student{
-
-	void displayCSstudent(){
-		System.out.println();
-		System.out.println("CSstudnt class with multilevel inheritance ");
-		System.out.println("calling student class function");
-		displaystudent();
-	}
-}
-
-public class Main{
-	public static void main(String[] args){
-
-		college c1=new college();
-		student s1=new student();
-		CSstudnt cs1=new CSstudnt();
-
-		c1.displaycollege();
-		s1.displaystudent();
-		cs1.displayCSstudent();
-
-	}
-
+        // Calling methods from all three classes
+        myDog.eat();  // Inherited from Animal class
+        myDog.walk(); // Inherited from Mammal class
+        myDog.bark(); // Defined in Dog class
+    }
 }
