@@ -1,0 +1,88 @@
+import java.util.HashSet; 
+import java.util.Set; 
+public class SetOperations { 
+ public static void main(String[] args) { 
+ // Create sets 
+ Set<String> set1 = new HashSet<>(); 
+ Set<String> set2 = new HashSet<>(); 
+ // Add items in the set 
+ set1.add("Item1"); 
+ set1.add("Item2"); 
+ set1.add("Item3"); 
+ // Insert items of one set into another 
+ set2.addAll(set1); 
+ // Remove items from the set 
+ set1.remove("Item2");
+
+// Search the specified item in the set 
+ boolean containsItem = set1.contains("Item1"); 
+ System.out.println("Set 1: " + set1); 
+ System.out.println("Set 2: " + set2); 
+ System.out.println("Contains 'Item1' in Set 1: " + containsItem); 
+ } 
+}
+
+
+
+
+
+
+//4 prectical 
+
+
+
+
+
+
+
+
+
+
+import java.util.HashMap; 
+import java.util.Map; 
+public class MapOperations { 
+ public static void main(String[] args) { 
+ // Create a map 
+ Map<Integer, String> map1 = new HashMap<>(); 
+ Map<Integer, String> map2 = new HashMap<>(); 
+ // Add items in the map 
+ map1.put(1, "Value1"); 
+ map1.put(2, "Value2"); 
+ map1.put(3, "Value3"); 
+ // Remove items from the map
+map1.remove(2); 
+ // Search specific key from the map 
+ boolean containsKey = map1.containsKey(1); 
+ // Get value of the specified key 
+ String value = map1.get(1); 
+ // Insert map elements of one map into another 
+ map2.putAll(map1); 
+ // Print all keys and values of the map 
+ System.out.println("Map 1: " + map1); 
+ System.out.println("Map 2: " + map2); 
+ System.out.println("Contains key '1' in Map 1: " + containsKey); 
+ System.out.println("Value for key '1' in Map 1: " + value); 
+ } 
+}
+
+
+
+interface Operation { 
+ int operate(int a, int b); 
+ String concatenate(String s1, String s2); 
+} 
+public class LambdaExpressions { 
+ public static void main(String[] args) { 
+ // Lambda expression to add two numbers 
+ Operation addOperation = (a, b) -> a + b; 
+ // Lambda expression to concatenate two strings 
+ Operation concatenateOperation = (s1, s2) -> s1 + s2; 
+ // Test the operations
+
+
+
+System.out.println("Addition: " + addOperation.operate(5, 3)); 
+ System.out.println("Concatenation: " + concatenateOperation.concatenate("Hello", 
+"World")); 
+ } 
+} 
